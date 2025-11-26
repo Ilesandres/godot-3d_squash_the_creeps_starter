@@ -7,7 +7,7 @@ extends Node
 @onready var game_over_screen = $UI_Manager/GameOverScreen
 @onready var mob_timer = $MobTimer
 @onready var lives_label = $UI_Manager/LivesLabel
-@onready var score_label = $UI_Manager/ScoreLabel 
+@onready var score_label = $UI_Manager/ScoreLabel
 
 var player: CharacterBody3D
 
@@ -41,7 +41,8 @@ func start_game():
 func end_game():
 	mob_timer.stop()
 	
-	player.hide()
+	if is_instance_valid(player):
+		player.hide()
 	
 	get_tree().call_group("mobs", "queue_free")
 	
@@ -59,18 +60,27 @@ func spawn_player():
 	
 	player.lives_changed.connect(lives_label.update_lives)
 	
-	if is_instance_valid(player):
-		player.reset_health() 
+	player.lives_changed.connect(_on_player_lives_changed)
+	
+	player.reset_health()
 	
 	player.position = $Ground.position + Vector3(0, 1, 0)
 	
+func _on_player_lives_changed(new_lives: int):
+	if new_lives <= 0:
+		end_game()
+
 func _on_play_button_pressed():
 	start_game()
 
 func _on_mob_timer_timeout():
+	if not is_instance_valid(player):
+		return
+		
 	var mob = mob_scene.instantiate()
 	var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
 	mob_spawn_location.progress_ratio = randf()
+	
 	var player_position = player.position
 	
 	mob.initialize(mob_spawn_location.position, player_position)
@@ -79,17 +89,12 @@ func _on_mob_timer_timeout():
 	mob.squashed.connect(score_label._on_mob_squashed.bind())
 
 func _on_player_hit():
-
 	if is_instance_valid(player):
-
 		get_tree().call_group("mobs", "queue_free")
 
 		player.stop_movement()
 		
 		mob_timer.start()
-	else:
-
-		end_game()
 
 func _on_retry_button_pressed():
 	spawn_player()

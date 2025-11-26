@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 signal hit
-signal lives_changed(new_lives) 
+signal lives_changed(new_lives)
 
 @export var max_lives: int = 3
 var current_lives: int = 0
@@ -26,10 +26,9 @@ func reset_health():
 
 func lose_life():
 	current_lives -= 1
-	lives_changed.emit(current_lives)
+	lives_changed.emit(current_lives) 
 	
 	if current_lives <= 0:
-		hit.emit() 
 		die()
 	else:
 		hit.emit()
@@ -38,7 +37,6 @@ func lose_life():
 func _physics_process(delta):
 	var direction = Vector3.ZERO
 	if direction != Vector3.ZERO:
-		#...
 		$AnimationPlayer.speed_scale = 4
 	else:
 		$AnimationPlayer.speed_scale = 1
