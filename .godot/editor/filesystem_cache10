@@ -1,20 +1,22 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1764178550
+::res://::1764180619
+heart1.glb::PackedScene::1703877262044234790::1764180619::1764180620::1::::<><><>0<>0<>ee03bb947f89f22ae90b88350e7fe770<>res://.godot/imported/heart1.glb-e8f33468b1205b00d46b7d49ecf0bbc1.scn::
 icon.webp::CompressedTexture2D::27118964165343846::1763737937::1763738011::1::::<><><>0<>0<>d1498e266395186d04e973f787f3596d<>res://.godot/imported/icon.webp-e94f9a68b0f625a567a797079e4d325f.ctex::
 lives_label.gd::GDScript::7154068815311325707::1764173359::0::1::::<>Label<><>0<>0<><>::
 main.gd::GDScript::4982184209173222137::1764177656::0::1::::<>Node<><>0<>0<><>::
-main.tscn::PackedScene::1940543232055977835::1764178550::0::1::::<><><>0<>0<><>::uid://cc8n3086pvl18::::res://main.gd<>uid://ceuu150fmggvr::::res://player.tscn<>uid://defdm2qdva75q::::res://mob.tscn<>uid://cyxhh7ddkn62q::::res://fonts/Montserrat-Medium.ttf<>uid://3fi1roo3igd7::::res://scoreLabel.gd<>uid://c86qp6g1uqgox::::res://lives_label.gd<>uid://t7u2tli3wii1::::res://fonts/pixel-game/Pixel Game.otf<>uid://caybwtlbntsqj::::res://art/backgroun object.jpg<>uid://cwccf80bhklk3::::res://art/tv-controller.jpg
+main.tscn::PackedScene::1940543232055977835::1764180261::0::1::::<><><>0<>0<><>::uid://cc8n3086pvl18::::res://main.gd<>uid://ceuu150fmggvr::::res://player.tscn<>uid://defdm2qdva75q::::res://mob.tscn<>uid://cyxhh7ddkn62q::::res://fonts/Montserrat-Medium.ttf<>uid://3fi1roo3igd7::::res://scoreLabel.gd<>uid://c86qp6g1uqgox::::res://lives_label.gd<>uid://t7u2tli3wii1::::res://fonts/pixel-game/Pixel Game.otf<>uid://caybwtlbntsqj::::res://art/backgroun object.jpg<>uid://cwccf80bhklk3::::res://art/tv-controller.jpg<>uid://bhou1mgole5kg::::res://art/controller-mario-removebg-preview.png
 mob.gd::GDScript::6924879768536141194::1764170577::0::1::::<>CharacterBody3D<><>0<>0<><>::
 mob.tscn::PackedScene::7450544337918621628::1764170577::0::1::::<><><>0<>0<><>::uid://c5wp01kn08qxe::::res://mob.gd<>uid://bicorb7we351t::::res://art/mob.glb
 music_player.tscn::PackedScene::8717211197418034313::1764106177::0::1::::<><><>0<>0<><>::uid://c5qpnfga41t4p::::res://art/House In a Forest Loop.ogg
 player.gd::GDScript::5693221398705431802::1764175927::0::1::::<>CharacterBody3D<><>0<>0<><>::
 player.tscn::PackedScene::5096146682080455107::1764171624::0::1::::<><><>0<>0<><>::uid://d0ypm0v45pwdv::::res://art/player.glb<>uid://cnd3r3qyfy5so::::res://player.gd
 scoreLabel.gd::GDScript::1976142592416913758::1764171624::0::1::::<>Label<><>0<>0<><>::
-::res://art/::1764178634
+::res://art/::1764180171
 backgroun object.jpg::CompressedTexture2D::4822487452942388153::1764177920::1764177920::1::::<><><>0<>0<>7f4a52b206d9eef0d0e46752f8b204f3<>res://.godot/imported/backgroun object.jpg-20c4a08887710ae312a765312a144d2a.ctex::
 body.tres::StandardMaterial3D::-1::1763737937::0::1::::<><><>0<>0<><>::
 controller-mario-removebg-preview.png::CompressedTexture2D::2907905288413037282::1764178634::1764178634::1::::<><><>0<>0<>943c4c2c2b9ecf68802a0cd3bd0b3e2e<>res://.godot/imported/controller-mario-removebg-preview.png-5a2d21ba15d62763a397cb5907c7a436.ctex::
 eye.tres::StandardMaterial3D::-1::1763737937::0::1::::<><><>0<>0<><>::
+fish.obj::Mesh::5647731429268205042::1764180080::1764180081::1::::<><><>0<>0<>dd349994610857fabfdf87e815df5f72<>res://.godot/imported/fish.obj-f9e65994a79742957603e76d2a1b8931.mesh<*>res://.godot/imported/fish.obj-f9e65994a79742957603e76d2a1b8931.mesh::
 House In a Forest Loop.ogg::AudioStreamOggVorbis::6912470962729766485::1763737937::1763738011::1::::<><><>0<>0<>ca11219f684f6cd2af90d4e6cdaead58<>res://.godot/imported/House In a Forest Loop.ogg-1a6a72ae843ad792b7039931227e8d50.oggvorbisstr::
 mob.glb::PackedScene::2952940687663745631::1763737937::1763738014::1::::<><><>0<>0<>943020a3af25cee7ab36f3d953033e5d<>res://.godot/imported/mob.glb-3afb43c03b9d1598b6af5154e2543eac.scn::
 mob_body.tres::StandardMaterial3D::-1::1763737937::0::1::::<><><>0<>0<><>::

@@ -3,7 +3,7 @@ extends CharacterBody3D
 signal hit
 signal lives_changed(new_lives)
 
-@export var max_lives: int = 3
+@export var max_lives: int = 5 
 var current_lives: int = 0
 @export var speed = 14
 @export var fall_acceleration = 75
@@ -14,6 +14,7 @@ var current_lives: int = 0
 var target_velocity = Vector3.ZERO
 
 func _ready():
+	add_to_group("player") 
 	reset_health()
 
 func stop_movement():
@@ -24,15 +25,27 @@ func reset_health():
 	current_lives = max_lives
 	lives_changed.emit(current_lives)
 
+func add_life(amount: int = 1):
+	if current_lives < max_lives:
+		current_lives += amount
+		lives_changed.emit(current_lives)
+		print("¡Vida obtenida! Vidas restantes: %s" % current_lives)
+	else:
+		print("Vidas al máximo. No se puede sumar más.")
+
+
 func lose_life():
 	current_lives -= 1
-	lives_changed.emit(current_lives) 
+	lives_changed.emit(current_lives)
 	
 	if current_lives <= 0:
-		die()
+		die() 
 	else:
 		hit.emit()
 
+
+func die():
+	queue_free()
 
 func _physics_process(delta):
 	var direction = Vector3.ZERO
@@ -80,9 +93,6 @@ func _physics_process(delta):
 	move_and_slide()
 	$Pivot.rotation.x = PI / 6 * velocity.y / jump_impulse
 
-
-func die():
-	queue_free()
 
 func _on_mob_detector_body_entered(body):
 	lose_life()

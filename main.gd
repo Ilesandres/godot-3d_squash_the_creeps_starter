@@ -2,10 +2,15 @@ extends Node
 
 @export var mob_scene: PackedScene
 @export var player_scene: PackedScene
+@export var heart_scene: PackedScene # <--- Escena del Corazón (Power-up)
+
+# --- Nueva variable para el tiempo de vida del corazón ---
+@export var heart_lifespan: float = 15.0 # Segundos que el corazón espera antes de desaparecer
 
 @onready var start_menu = $UI_Manager/StartMenu
 @onready var game_over_screen = $UI_Manager/GameOverScreen
 @onready var mob_timer = $MobTimer
+@onready var heart_timer = $HeartTimer
 @onready var lives_label = $UI_Manager/LivesLabel
 @onready var score_label = $UI_Manager/ScoreLabel
 
@@ -18,6 +23,7 @@ func start_game_setup():
 	game_over_screen.hide()
 	start_menu.show()
 	mob_timer.stop()
+	heart_timer.stop()
 	
 	lives_label.hide()
 	score_label.hide()
@@ -36,15 +42,17 @@ func start_game():
 	score_label.reset_score()
 	
 	mob_timer.start()
-
+	heart_timer.start()
 
 func end_game():
 	mob_timer.stop()
+	heart_timer.stop()
 	
 	if is_instance_valid(player):
 		player.hide()
 	
 	get_tree().call_group("mobs", "queue_free")
+	get_tree().call_group("powerups", "queue_free")
 	
 	start_menu.hide()
 	lives_label.hide()
@@ -59,9 +67,6 @@ func spawn_player():
 	add_child(player)
 	
 	player.hit.connect(_on_player_hit)
-	
-	player.lives_changed.connect(lives_label.update_lives)
-	
 	player.lives_changed.connect(_on_player_lives_changed)
 	
 	player.reset_health()
@@ -69,12 +74,21 @@ func spawn_player():
 	player.position = $Ground.position + Vector3(0, 1, 0)
 	
 func _on_player_lives_changed(new_lives: int):
+	lives_label.update_lives(new_lives)
+	
 	if new_lives <= 0:
 		end_game()
 
-func _on_play_button_pressed():
-	start_game()
-
+func _on_player_hit():
+	if is_instance_valid(player):
+		get_tree().call_group("mobs", "queue_free")
+		get_tree().call_group("powerups", "queue_free")
+		
+		player.stop_movement()
+		
+		mob_timer.start()
+		heart_timer.start()
+		
 func _on_mob_timer_timeout():
 	if not is_instance_valid(player):
 		return
@@ -90,21 +104,35 @@ func _on_mob_timer_timeout():
 	
 	mob.squashed.connect(score_label._on_mob_squashed.bind())
 
-func _on_player_hit():
-	if is_instance_valid(player):
-		get_tree().call_group("mobs", "queue_free")
-
-		player.stop_movement()
+func _on_heart_timer_timeout():
+	if not is_instance_valid(player):
+		return
 		
-		mob_timer.start()
+	var heart = heart_scene.instantiate() as Area3D
+	
+	var spawn_location = get_node("SpawnPath/SpawnLocation")
+	
+	spawn_location.progress_ratio = randf_range(0.3, 0.8)
+	
+	heart.global_position = spawn_location.position + Vector3(0, 0.5, 0)
+	
+	if heart.has_method("set_lifespan"):
+		heart.set_lifespan(heart_lifespan)
+		
+	add_child(heart)
+	
+	heart_timer.wait_time = randf_range(5.0, 10.0)
+	heart_timer.start()
+
+func _on_play_button_pressed():
+	start_game()
 
 func _on_retry_button_pressed():
 	spawn_player()
 	start_game()
 
-func _unhandled_input(event):
-	pass
-
-
 func _on_main_button_pressed():
 	start_game_setup()
+
+func _unhandled_input(event):
+	pass

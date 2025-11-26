@@ -1,3 +1,6 @@
+Timer
+CollisionShape3D
+Area3D
 TextureRect
 Button
 Label
@@ -6,9 +9,6 @@ AnimationPlayer
 AnimationTree
 AudioStreamPlayer
 ColorRect
-CollisionShape3D
-Area3D
-Timer
 PathFollow3D
 Path3D
 MeshInstance3D

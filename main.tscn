@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://2wap0283yk0r"]
+[gd_scene load_steps=18 format=3 uid="uid://2wap0283yk0r"]
 
 [ext_resource type="Script" uid="uid://cc8n3086pvl18" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://ceuu150fmggvr" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://defdm2qdva75q" path="res://mob.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bgfwqjoxs7n8a" path="res://heart.tscn" id="4_efxa6"]
 [ext_resource type="FontFile" uid="uid://cyxhh7ddkn62q" path="res://fonts/Montserrat-Medium.ttf" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://3fi1roo3igd7" path="res://scoreLabel.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://c86qp6g1uqgox" path="res://lives_label.gd" id="6_7mycd"]
@@ -39,6 +40,9 @@ default_font_size = 22
 script = ExtResource("1_0xm2m")
 mob_scene = ExtResource("2_h2yge")
 player_scene = ExtResource("1_ig7tw")
+heart_scene = ExtResource("4_efxa6")
+
+[node name="HeartArea" parent="." instance=ExtResource("4_efxa6")]
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -85,7 +89,7 @@ mesh = SubResource("CylinderMesh_ig7tw")
 curve = SubResource("Curve3D_0xm2m")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
-transform = Transform3D(-0.99989134, 0, 0.014597256, 0, 1, 0, -0.014597256, 0, -0.99989134, -12.837369, 0, -12.316885)
+transform = Transform3D(-0.99989057, 0, 0.014597245, 0, 1, 0, -0.014597245, 0, -0.99989057, -12.837369, 0, -12.316885)
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -254,8 +258,12 @@ theme_override_font_sizes/font_size = 28
 text = "Lives"
 script = ExtResource("6_7mycd")
 
+[node name="HeartTimer" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="UI_Manager/StartMenu/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="UI_Manager/GameOverScreen/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="UI_Manager/GameOverScreen/MainButton" to="." method="_on_main_button_pressed"]
+[connection signal="timeout" from="HeartTimer" to="." method="_on_heart_timer_timeout"]

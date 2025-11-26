@@ -1,2 +1,6 @@
 res://main.tscn
 res://main.gd
+res://heart.tscn
+res://heart.gd
+res://player.gd
+res://mob.gd
