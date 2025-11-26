@@ -2,14 +2,13 @@ extends Label
 
 var score = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	# Asegúrate de que el score se muestre correctamente al inicio
+	text = "Score: %s" % score
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func reset_score():
+	score = 0
+	text = "Score: %s" % score
 
 func _on_mob_squashed():
 	score += 1

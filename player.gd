@@ -80,6 +80,7 @@ func _physics_process(delta):
 	move_and_slide()
 	$Pivot.rotation.x = PI / 6 * velocity.y / jump_impulse
 
+
 # And this function at the bottom.
 func die():
 	hit.emit()
