@@ -102,3 +102,7 @@ func _on_retry_button_pressed():
 
 func _unhandled_input(event):
 	pass
+
+
+func _on_main_button_pressed():
+	start_game_setup()
