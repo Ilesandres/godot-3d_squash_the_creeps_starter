@@ -6,6 +6,7 @@ extends Node
 @onready var start_menu = $UI_Manager/StartMenu
 @onready var game_over_screen = $UI_Manager/GameOverScreen
 @onready var mob_timer = $MobTimer
+@onready var lives_label = $UI_Manager/LivesLabel 
 
 var player: CharacterBody3D
 
@@ -49,9 +50,14 @@ func spawn_player():
 	
 	player.hit.connect(_on_player_hit)
 	
+	player.lives_changed.connect(lives_label.update_lives)
+	
+	if is_instance_valid(player):
+		player.reset_health()
+	
 	player.position = $Ground.position + Vector3(0, 1, 0)
 	
-func _on_play_button_pressed(): 
+func _on_play_button_pressed():
 	start_game()
 
 func _on_mob_timer_timeout():
@@ -65,12 +71,22 @@ func _on_mob_timer_timeout():
 	
 	mob.squashed.connect($UI_Manager/ScoreLabel._on_mob_squashed.bind())
 
-func _on_player_hit(): 
-	end_game()
+func _on_player_hit():
 
-func _on_retry_button_pressed(): 
+	if is_instance_valid(player):
+
+		get_tree().call_group("mobs", "queue_free")
+
+		player.stop_movement()
+
+		
+		mob_timer.start()
+	else:
+
+		end_game()
+
+func _on_retry_button_pressed():
 	spawn_player()
-	
 	start_game()
 
 func _unhandled_input(event):

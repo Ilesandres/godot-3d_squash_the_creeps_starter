@@ -3,7 +3,6 @@ extends Label
 var score = 0
 
 func _ready() -> void:
-	# Asegúrate de que el score se muestre correctamente al inicio
 	text = "Score: %s" % score
 
 func reset_score():

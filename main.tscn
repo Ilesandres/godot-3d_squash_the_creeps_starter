@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://2wap0283yk0r"]
+[gd_scene load_steps=13 format=3 uid="uid://2wap0283yk0r"]
 
 [ext_resource type="Script" uid="uid://cc8n3086pvl18" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://ceuu150fmggvr" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://defdm2qdva75q" path="res://mob.tscn" id="2_h2yge"]
 [ext_resource type="FontFile" uid="uid://cyxhh7ddkn62q" path="res://fonts/Montserrat-Medium.ttf" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://3fi1roo3igd7" path="res://scoreLabel.gd" id="5_7mycd"]
+[ext_resource type="Script" uid="uid://c86qp6g1uqgox" path="res://lives_label.gd" id="6_7mycd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
 size = Vector3(60, 2, 60)
@@ -50,8 +51,6 @@ mesh = SubResource("BoxMesh_7dm0k")
 transform = Transform3D(-4.3711392e-08, 1.0000001, 4.3711392e-08, 0, -4.3711392e-08, 1.0000001, 1.0000001, 4.3711392e-08, 1.9106857e-15, 0, 20, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-
 [node name="CameraPivot" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
 
@@ -82,7 +81,7 @@ mesh = SubResource("CylinderMesh_ig7tw")
 curve = SubResource("Curve3D_0xm2m")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
-transform = Transform3D(-0.99989194, 0, 0.014597265, 0, 1, 0, -0.014597265, 0, -0.99989194, -12.837369, 0, -12.316885)
+transform = Transform3D(-0.9998915, 0, 0.0145972585, 0, 1, 0, -0.0145972585, 0, -0.9998915, -12.837369, 0, -12.316885)
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -176,7 +175,12 @@ offset_right = 480.0
 offset_bottom = 373.0
 text = "Retry"
 
-[connection signal="hit" from="Player" to="." method="_on_player_hit"]
+[node name="LivesLabel" type="Label" parent="UI_Manager"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 28.0
+script = ExtResource("6_7mycd")
+
 [connection signal="timeout" from="MobTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="pressed" from="UI_Manager/StartMenu/PlayButton" to="." method="_on_play_button_pressed"]
