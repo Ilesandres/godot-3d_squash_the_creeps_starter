@@ -89,7 +89,7 @@ mesh = SubResource("CylinderMesh_ig7tw")
 curve = SubResource("Curve3D_0xm2m")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
-transform = Transform3D(-0.99989057, 0, 0.014597245, 0, 1, 0, -0.014597245, 0, -0.99989057, -12.837369, 0, -12.316885)
+transform = Transform3D(-0.9998903, 0, 0.014597241, 0, 1, 0, -0.014597241, 0, -0.9998903, -12.837369, 0, -12.316885)
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -259,7 +259,6 @@ text = "Lives"
 script = ExtResource("6_7mycd")
 
 [node name="HeartTimer" type="Timer" parent="."]
-wait_time = 2.0
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_timer_timeout"]

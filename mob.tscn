@@ -8,6 +8,7 @@ size = Vector3(2.1376953, 1.4034424, 2.0634766)
 
 [sub_resource type="Animation" id="Animation_i3pqv"]
 length = 0.001
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,7 +37,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_onrkg"]
 resource_name = "float"
 length = 1.2
-loop_mode = 1
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -88,6 +89,6 @@ aabb = AABB(-1.2444053, -0.001, -2.1154888, 2.4888105, 0.002, 4.2309775)
 libraries = {
 &"": SubResource("AnimationLibrary_i3pqv")
 }
-autoplay = "RESET"
+autoplay = "float"
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

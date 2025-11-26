@@ -42,6 +42,7 @@ shadow_mesh = SubResource("ArrayMesh_3t7du")
 [sub_resource type="Animation" id="Animation_t7y50"]
 resource_name = "CubeAction_001"
 length = 3.3333333
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -70,7 +71,7 @@ collision_layer = 8
 script = ExtResource("1_cixvg")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -1.8199258e-06, 0, 1, 0, 1.8199258e-06, 0, -1, -2.0197383e-08, 1.3179171, -0.0034926927)
+transform = Transform3D(0.12495442, 0, -0.99216247, 0, 1, 0, 0.99216247, 0, 0.12495442, -2.0197383e-08, 1.4727455, -0.0034926927)
 mesh = SubResource("ArrayMesh_ux07f")
 skeleton = NodePath("")
 
@@ -81,6 +82,7 @@ transform = Transform3D(-0.84158313, -0.53926396, -0.030531019, -8.940697e-08, 0
 libraries = {
 &"": SubResource("AnimationLibrary_l1c47")
 }
+autoplay = "CubeAction_001"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

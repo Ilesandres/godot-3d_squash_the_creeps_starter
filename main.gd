@@ -103,25 +103,35 @@ func _on_mob_timer_timeout():
 	add_child(mob)
 	
 	mob.squashed.connect(score_label._on_mob_squashed.bind())
-
+	
+	
 func _on_heart_timer_timeout():
 	if not is_instance_valid(player):
 		return
 		
 	var heart = heart_scene.instantiate() as Area3D
-	
 	var spawn_location = get_node("SpawnPath/SpawnLocation")
 	
-	spawn_location.progress_ratio = randf_range(0.3, 0.8)
+	spawn_location.progress_ratio = randf_range(0.3, 0.7)
 	
-	heart.global_position = spawn_location.position + Vector3(0, 0.5, 0)
+	var base_position = spawn_location.position
+	
+
+	var central_z_offset = randf_range(-5.0, 5.0) 
+	
+	heart.global_position = Vector3(
+		base_position.x, 
+		0.5,             
+		central_z_offset 
+	)
 	
 	if heart.has_method("set_lifespan"):
 		heart.set_lifespan(heart_lifespan)
 		
 	add_child(heart)
+	heart.add_to_group("powerups")
 	
-	heart_timer.wait_time = randf_range(5.0, 10.0)
+	heart_timer.wait_time = randf_range(2.0, 5.0) 
 	heart_timer.start()
 
 func _on_play_button_pressed():
