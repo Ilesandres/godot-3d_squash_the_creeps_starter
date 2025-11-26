@@ -6,7 +6,8 @@ extends Node
 @onready var start_menu = $UI_Manager/StartMenu
 @onready var game_over_screen = $UI_Manager/GameOverScreen
 @onready var mob_timer = $MobTimer
-@onready var lives_label = $UI_Manager/LivesLabel 
+@onready var lives_label = $UI_Manager/LivesLabel
+@onready var score_label = $UI_Manager/ScoreLabel 
 
 var player: CharacterBody3D
 
@@ -18,6 +19,9 @@ func start_game_setup():
 	start_menu.show()
 	mob_timer.stop()
 	
+	lives_label.hide()
+	score_label.hide()
+	
 	spawn_player()
 
 func start_game():
@@ -26,7 +30,10 @@ func start_game():
 	
 	player.show()
 	
-	$UI_Manager/ScoreLabel.reset_score()
+	lives_label.show()
+	score_label.show()
+	
+	score_label.reset_score()
 	
 	mob_timer.start()
 
@@ -53,7 +60,7 @@ func spawn_player():
 	player.lives_changed.connect(lives_label.update_lives)
 	
 	if is_instance_valid(player):
-		player.reset_health()
+		player.reset_health() 
 	
 	player.position = $Ground.position + Vector3(0, 1, 0)
 	
@@ -69,7 +76,7 @@ func _on_mob_timer_timeout():
 	mob.initialize(mob_spawn_location.position, player_position)
 	add_child(mob)
 	
-	mob.squashed.connect($UI_Manager/ScoreLabel._on_mob_squashed.bind())
+	mob.squashed.connect(score_label._on_mob_squashed.bind())
 
 func _on_player_hit():
 
@@ -78,7 +85,6 @@ func _on_player_hit():
 		get_tree().call_group("mobs", "queue_free")
 
 		player.stop_movement()
-
 		
 		mob_timer.start()
 	else:
