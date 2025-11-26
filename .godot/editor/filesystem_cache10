@@ -1,15 +1,19 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1764180619
-heart1.glb::PackedScene::1703877262044234790::1764180619::1764180620::1::::<><><>0<>0<>ee03bb947f89f22ae90b88350e7fe770<>res://.godot/imported/heart1.glb-e8f33468b1205b00d46b7d49ecf0bbc1.scn::
+::res://::1764188026
+heart1.glb::PackedScene::1703877262044234790::1764180619::1764180665::1::::<><><>0<>0<>ee03bb947f89f22ae90b88350e7fe770<>res://.godot/imported/heart1.glb-e8f33468b1205b00d46b7d49ecf0bbc1.scn::
+hearth-health.png::CompressedTexture2D::2935697773638538595::1764188024::1764188026::1::::<><><>0<>0<>a8ff5a603a924f0e55454103d871dbac<>res://.godot/imported/hearth-health.png-97317e57413e1ebdf297b11a79f7b871.ctex::
 icon.webp::CompressedTexture2D::27118964165343846::1763737937::1763738011::1::::<><><>0<>0<>d1498e266395186d04e973f787f3596d<>res://.godot/imported/icon.webp-e94f9a68b0f625a567a797079e4d325f.ctex::
 lives_label.gd::GDScript::7154068815311325707::1764173359::0::1::::<>Label<><>0<>0<><>::
-main.gd::GDScript::4982184209173222137::1764177656::0::1::::<>Node<><>0<>0<><>::
-main.tscn::PackedScene::1940543232055977835::1764180261::0::1::::<><><>0<>0<><>::uid://cc8n3086pvl18::::res://main.gd<>uid://ceuu150fmggvr::::res://player.tscn<>uid://defdm2qdva75q::::res://mob.tscn<>uid://cyxhh7ddkn62q::::res://fonts/Montserrat-Medium.ttf<>uid://3fi1roo3igd7::::res://scoreLabel.gd<>uid://c86qp6g1uqgox::::res://lives_label.gd<>uid://t7u2tli3wii1::::res://fonts/pixel-game/Pixel Game.otf<>uid://caybwtlbntsqj::::res://art/backgroun object.jpg<>uid://cwccf80bhklk3::::res://art/tv-controller.jpg<>uid://bhou1mgole5kg::::res://art/controller-mario-removebg-preview.png
-mob.gd::GDScript::6924879768536141194::1764170577::0::1::::<>CharacterBody3D<><>0<>0<><>::
-mob.tscn::PackedScene::7450544337918621628::1764170577::0::1::::<><><>0<>0<><>::uid://c5wp01kn08qxe::::res://mob.gd<>uid://bicorb7we351t::::res://art/mob.glb
+main.gd::GDScript::4982184209173222137::1764187509::0::1::::<>Node<><>0<>0<><>::
+main.tscn::PackedScene::1940543232055977835::1764187509::0::1::::<><><>0<>0<><>::uid://cc8n3086pvl18::::res://main.gd<>uid://ceuu150fmggvr::::res://player.tscn<>uid://defdm2qdva75q::::res://mob.tscn<>uid://bgfwqjoxs7n8a::::res://heart.tscn<>uid://cyxhh7ddkn62q::::res://fonts/Montserrat-Medium.ttf<>uid://3fi1roo3igd7::::res://scoreLabel.gd<>uid://c86qp6g1uqgox::::res://lives_label.gd<>uid://t7u2tli3wii1::::res://fonts/pixel-game/Pixel Game.otf<>uid://caybwtlbntsqj::::res://art/backgroun object.jpg<>uid://cwccf80bhklk3::::res://art/tv-controller.jpg<>uid://bhou1mgole5kg::::res://art/controller-mario-removebg-preview.png
+mob.gd::GDScript::6924879768536141194::1764184209::0::1::::<>CharacterBody3D<><>0<>0<><>::
+mob.tscn::PackedScene::7450544337918621628::1764186877::0::1::::<><><>0<>0<><>::uid://c5wp01kn08qxe::::res://mob.gd<>uid://bicorb7we351t::::res://art/mob.glb
 music_player.tscn::PackedScene::8717211197418034313::1764106177::0::1::::<><><>0<>0<><>::uid://c5qpnfga41t4p::::res://art/House In a Forest Loop.ogg
-player.gd::GDScript::5693221398705431802::1764175927::0::1::::<>CharacterBody3D<><>0<>0<><>::
-player.tscn::PackedScene::5096146682080455107::1764171624::0::1::::<><><>0<>0<><>::uid://d0ypm0v45pwdv::::res://art/player.glb<>uid://cnd3r3qyfy5so::::res://player.gd
+player.gd::GDScript::5693221398705431802::1764184157::0::1::::<>CharacterBody3D<><>0<>0<><>::
+player.tscn::PackedScene::5096146682080455107::1764186040::0::1::::<><><>0<>0<><>::uid://d0ypm0v45pwdv::::res://art/player.glb<>uid://cnd3r3qyfy5so::::res://player.gd
+heart.tscn::PackedScene::2819240476242690582::1764186647::0::1::::<><><>0<>0<><>::uid://dslym2ltfe7fn::::res://heart.gd
+heart.gd::GDScript::8446849465205249095::1764184128::0::1::::<>Area3D<><>0<>0<><>::
+README.MD::TextFile::-1::1764187822::0::1::::<><><>0<>0<><>::
 scoreLabel.gd::GDScript::1976142592416913758::1764171624::0::1::::<>Label<><>0<>0<><>::
 ::res://art/::1764180171
 backgroun object.jpg::CompressedTexture2D::4822487452942388153::1764177920::1764177920::1::::<><><>0<>0<>7f4a52b206d9eef0d0e46752f8b204f3<>res://.godot/imported/backgroun object.jpg-20c4a08887710ae312a765312a144d2a.ctex::
@@ -41,3 +45,10 @@ pixel game font 8.jpg::CompressedTexture2D::5042700291804609657::1723924374::176
 pixel game font 9.jpg::CompressedTexture2D::1369861746238830256::1723924382::1764176916::1::::<><><>0<>0<>d8c8935bf727a0334d883ff8bd057bb3<>res://.godot/imported/pixel game font 9.jpg-3a277e945762a473e9c65a05aa108af5.ctex::
 pixel game font 10.jpg::CompressedTexture2D::2078170867416410499::1723924392::1764176916::1::::<><><>0<>0<>cf9beb763537feba9065b789a0a818de<>res://.godot/imported/pixel game font 10.jpg-741b0a7aac8e44c96cf56dc34ccd3348.ctex::
 Pixel Game.otf::FontFile::1400911688881565946::1724127736::1764176914::1::::<><><>0<>0<>0082f695f166087a3be9402427969cff<>res://.godot/imported/Pixel Game.otf-6556ae32498222a34ac7cc6355b78080.fontdata::
+::res://screens/::1764188112
+game-over-screen.png::CompressedTexture2D::1796039205481092937::1764187939::1764187981::1::::<><><>0<>0<>e652a8c5dad0e3af2959452f3bfa5064<>res://.godot/imported/game-over-screen.png-d14a91b590b0f562ae30a464507d76ac.ctex::
+game-screen.png::CompressedTexture2D::4555639204112954270::1764187913::1764187982::1::::<><><>0<>0<>2f10b598c636bbe07b63bb458846f4e4<>res://.godot/imported/game-screen.png-54ddd7cfa2e54368e92abd5b30d9cef3.ctex::
+heart-recovery-boost.png::CompressedTexture2D::2649774984981894690::1764188113::1764188116::1::::<><><>0<>0<>fe7f34759342b04526fc34ce4d608a13<>res://.godot/imported/heart-recovery-boost.png-618d27ddeada2b015fb08be9c18713dd.ctex::
+HOME-SCREEN .png::CompressedTexture2D::6481563527828346452::1764187865::1764187877::1::::<><><>0<>0<>67767eebcd3021d550c4a3be7b41fb80<>res://.godot/imported/HOME-SCREEN .png-475dd65891b77d7cab169a998b6c4387.ctex::
+score.png::CompressedTexture2D::8459937536401313841::1764188000::1764188007::1::::<><><>0<>0<>45fab89f3d87818899c185469da1ebd4<>res://.godot/imported/score.png-6a1a3881a3e135b8c93d2c0674f485e9.ctex::
+vidas.png::CompressedTexture2D::7060768534531840742::1764187975::1764187981::1::::<><><>0<>0<>a1a183cd1acb4910da72d446e2cb7524<>res://.godot/imported/vidas.png-44f0b46248ae3af6db76fd7f53315b49.ctex::
