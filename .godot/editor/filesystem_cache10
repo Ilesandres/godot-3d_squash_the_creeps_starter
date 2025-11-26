@@ -1,16 +1,19 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1764167680
+::res://::1764178550
 icon.webp::CompressedTexture2D::27118964165343846::1763737937::1763738011::1::::<><><>0<>0<>d1498e266395186d04e973f787f3596d<>res://.godot/imported/icon.webp-e94f9a68b0f625a567a797079e4d325f.ctex::
-main.gd::GDScript::4982184209173222137::1764105907::0::1::::<>Node<><>0<>0<><>::
-main.tscn::PackedScene::1940543232055977835::1764105907::0::1::::<><><>0<>0<><>::uid://cc8n3086pvl18::::res://main.gd<>uid://ceuu150fmggvr::::res://player.tscn<>uid://defdm2qdva75q::::res://mob.tscn<>uid://cyxhh7ddkn62q::::res://fonts/Montserrat-Medium.ttf<>uid://3fi1roo3igd7::::res://scoreLabel.gd
-mob.gd::GDScript::6924879768536141194::1764166902::0::1::::<>CharacterBody3D<><>0<>0<><>::
-mob.tscn::PackedScene::7450544337918621628::1764166902::0::1::::<><><>0<>0<><>::uid://c5wp01kn08qxe::::res://mob.gd<>uid://bicorb7we351t::::res://art/mob.glb
+lives_label.gd::GDScript::7154068815311325707::1764173359::0::1::::<>Label<><>0<>0<><>::
+main.gd::GDScript::4982184209173222137::1764177656::0::1::::<>Node<><>0<>0<><>::
+main.tscn::PackedScene::1940543232055977835::1764178550::0::1::::<><><>0<>0<><>::uid://cc8n3086pvl18::::res://main.gd<>uid://ceuu150fmggvr::::res://player.tscn<>uid://defdm2qdva75q::::res://mob.tscn<>uid://cyxhh7ddkn62q::::res://fonts/Montserrat-Medium.ttf<>uid://3fi1roo3igd7::::res://scoreLabel.gd<>uid://c86qp6g1uqgox::::res://lives_label.gd<>uid://t7u2tli3wii1::::res://fonts/pixel-game/Pixel Game.otf<>uid://caybwtlbntsqj::::res://art/backgroun object.jpg<>uid://cwccf80bhklk3::::res://art/tv-controller.jpg
+mob.gd::GDScript::6924879768536141194::1764170577::0::1::::<>CharacterBody3D<><>0<>0<><>::
+mob.tscn::PackedScene::7450544337918621628::1764170577::0::1::::<><><>0<>0<><>::uid://c5wp01kn08qxe::::res://mob.gd<>uid://bicorb7we351t::::res://art/mob.glb
 music_player.tscn::PackedScene::8717211197418034313::1764106177::0::1::::<><><>0<>0<><>::uid://c5qpnfga41t4p::::res://art/House In a Forest Loop.ogg
-player.gd::GDScript::5693221398705431802::1764107342::0::1::::<>CharacterBody3D<><>0<>0<><>::
-player.tscn::PackedScene::5096146682080455107::1764167129::0::1::::<><><>0<>0<><>::uid://d0ypm0v45pwdv::::res://art/player.glb<>uid://cnd3r3qyfy5so::::res://player.gd
-scoreLabel.gd::GDScript::1976142592416913758::1764105285::0::1::::<>Label<><>0<>0<><>::
-::res://art/::1763738015
+player.gd::GDScript::5693221398705431802::1764175927::0::1::::<>CharacterBody3D<><>0<>0<><>::
+player.tscn::PackedScene::5096146682080455107::1764171624::0::1::::<><><>0<>0<><>::uid://d0ypm0v45pwdv::::res://art/player.glb<>uid://cnd3r3qyfy5so::::res://player.gd
+scoreLabel.gd::GDScript::1976142592416913758::1764171624::0::1::::<>Label<><>0<>0<><>::
+::res://art/::1764178634
+backgroun object.jpg::CompressedTexture2D::4822487452942388153::1764177920::1764177920::1::::<><><>0<>0<>7f4a52b206d9eef0d0e46752f8b204f3<>res://.godot/imported/backgroun object.jpg-20c4a08887710ae312a765312a144d2a.ctex::
 body.tres::StandardMaterial3D::-1::1763737937::0::1::::<><><>0<>0<><>::
+controller-mario-removebg-preview.png::CompressedTexture2D::2907905288413037282::1764178634::1764178634::1::::<><><>0<>0<>943c4c2c2b9ecf68802a0cd3bd0b3e2e<>res://.godot/imported/controller-mario-removebg-preview.png-5a2d21ba15d62763a397cb5907c7a436.ctex::
 eye.tres::StandardMaterial3D::-1::1763737937::0::1::::<><><>0<>0<><>::
 House In a Forest Loop.ogg::AudioStreamOggVorbis::6912470962729766485::1763737937::1763738011::1::::<><><>0<>0<>ca11219f684f6cd2af90d4e6cdaead58<>res://.godot/imported/House In a Forest Loop.ogg-1a6a72ae843ad792b7039931227e8d50.oggvorbisstr::
 mob.glb::PackedScene::2952940687663745631::1763737937::1763738014::1::::<><><>0<>0<>943020a3af25cee7ab36f3d953033e5d<>res://.godot/imported/mob.glb-3afb43c03b9d1598b6af5154e2543eac.scn::
@@ -18,6 +21,21 @@ mob_body.tres::StandardMaterial3D::-1::1763737937::0::1::::<><><>0<>0<><>::
 mob_eye.tres::StandardMaterial3D::-1::1763737937::0::1::::<><><>0<>0<><>::
 player.glb::PackedScene::8964461739428881931::1763737937::1763738015::1::::<><><>0<>0<>a78ee2d8f7aa443b1c94ccbc80947510<>res://.godot/imported/player.glb-08dcfb373480a049995065542e37637b.scn::
 pupil.tres::StandardMaterial3D::-1::1763737937::0::1::::<><><>0<>0<><>::
-::res://fonts/::1763738011
+tv-controller.jpg::CompressedTexture2D::6321256817831952572::1764178447::1764178447::1::::<><><>0<>0<>b0843fef928956c7b1f815af04634b31<>res://.godot/imported/tv-controller.jpg-bfb896af07ed5c19e6c570f043d52929.ctex::
+::res://fonts/::1764176858
 LICENSE.txt::TextFile::-1::1763737937::0::1::::<><><>0<>0<><>::
 Montserrat-Medium.ttf::FontFile::6505293508080888906::1763737937::1763738011::1::::<><><>0<>0<>1eb268033ecd125d99a1f1687f4c989d<>res://.godot/imported/Montserrat-Medium.ttf-e832861e4ad4110e172112dc430c04b0.fontdata::
+::res://fonts/pixel-game/::1764176916
+1001fonts-pixel-game-eula.txt::TextFile::-1::1724172914::0::1::::<><><>0<>0<><>::
+Pixel Game Extrude.otf::FontFile::5308970222955106949::1724127924::1764176914::1::::<><><>0<>0<>fef1a958cfa8b73f274cd498deac78b5<>res://.godot/imported/Pixel Game Extrude.otf-277aea6939bd4675f566af81eb7e97b4.fontdata::
+pixel game font 1.jpg::CompressedTexture2D::2949531700411568310::1723924232::1764176915::1::::<><><>0<>0<>3f6b08cea46e58d2245907b0fc5e262a<>res://.godot/imported/pixel game font 1.jpg-0354a696fbdee014ce1c71af5ad44969.ctex::
+pixel game font 2.jpg::CompressedTexture2D::8194065294914843478::1723924246::1764176915::1::::<><><>0<>0<>41d9a7507bb1d79f6a75eda3a89b07f4<>res://.godot/imported/pixel game font 2.jpg-799faa9ec328b6f0d59e67a6272f2336.ctex::
+pixel game font 3.jpg::CompressedTexture2D::2190681010420530451::1723924258::1764176915::1::::<><><>0<>0<>92c8eb5d494595007e112750a198de3c<>res://.godot/imported/pixel game font 3.jpg-0fb5f6a6c76edf41a7af7b7b34572501.ctex::
+pixel game font 4.jpg::CompressedTexture2D::9030567656026300248::1723924270::1764176915::1::::<><><>0<>0<>4cdd630acff30b78ed07f68b973cbb84<>res://.godot/imported/pixel game font 4.jpg-4a75c3aa86564dd3b8a81e484fedc422.ctex::
+pixel game font 5.jpg::CompressedTexture2D::8269199781835257111::1723924338::1764176915::1::::<><><>0<>0<>8d4844f09a58a4f639f6cbb73dfc6654<>res://.godot/imported/pixel game font 5.jpg-aaca08db2141c1792f62e2818eb6a79b.ctex::
+pixel game font 6.jpg::CompressedTexture2D::3187778431886967825::1723924352::1764176915::1::::<><><>0<>0<>9e1f6fa311cd2ff87746d72dd7444463<>res://.godot/imported/pixel game font 6.jpg-bdf0700b878fc6f7ba2c682bfbc28b30.ctex::
+pixel game font 7.jpg::CompressedTexture2D::9154726838511152672::1723924364::1764176916::1::::<><><>0<>0<>cadf5a1aa2842f4f855e3478bd26a057<>res://.godot/imported/pixel game font 7.jpg-9bde560ef1db941af698e4ca0bfa8923.ctex::
+pixel game font 8.jpg::CompressedTexture2D::5042700291804609657::1723924374::1764176916::1::::<><><>0<>0<>180f541f5e4a48d9a63c6bbf939419fa<>res://.godot/imported/pixel game font 8.jpg-c30bfb2e642c2fae242ebb780c4d0468.ctex::
+pixel game font 9.jpg::CompressedTexture2D::1369861746238830256::1723924382::1764176916::1::::<><><>0<>0<>d8c8935bf727a0334d883ff8bd057bb3<>res://.godot/imported/pixel game font 9.jpg-3a277e945762a473e9c65a05aa108af5.ctex::
+pixel game font 10.jpg::CompressedTexture2D::2078170867416410499::1723924392::1764176916::1::::<><><>0<>0<>cf9beb763537feba9065b789a0a818de<>res://.godot/imported/pixel game font 10.jpg-741b0a7aac8e44c96cf56dc34ccd3348.ctex::
+Pixel Game.otf::FontFile::1400911688881565946::1724127736::1764176914::1::::<><><>0<>0<>0082f695f166087a3be9402427969cff<>res://.godot/imported/Pixel Game.otf-6556ae32498222a34ac7cc6355b78080.fontdata::

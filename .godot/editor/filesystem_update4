@@ -1,8 +1,2 @@
 res://main.tscn
 res://main.gd
-res://player.tscn
-res://scoreLabel.gd
-res://player.gd
-res://mob.tscn
-res://mob.gd
-res://lives_label.gd

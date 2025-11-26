@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://2wap0283yk0r"]
+[gd_scene load_steps=17 format=3 uid="uid://2wap0283yk0r"]
 
 [ext_resource type="Script" uid="uid://cc8n3086pvl18" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://ceuu150fmggvr" path="res://player.tscn" id="1_ig7tw"]
@@ -6,6 +6,10 @@
 [ext_resource type="FontFile" uid="uid://cyxhh7ddkn62q" path="res://fonts/Montserrat-Medium.ttf" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://3fi1roo3igd7" path="res://scoreLabel.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://c86qp6g1uqgox" path="res://lives_label.gd" id="6_7mycd"]
+[ext_resource type="FontFile" uid="uid://t7u2tli3wii1" path="res://fonts/pixel-game/Pixel Game.otf" id="6_272bh"]
+[ext_resource type="Texture2D" uid="uid://caybwtlbntsqj" path="res://art/backgroun object.jpg" id="7_5vw27"]
+[ext_resource type="Texture2D" uid="uid://cwccf80bhklk3" path="res://art/tv-controller.jpg" id="7_kek77"]
+[ext_resource type="Texture2D" uid="uid://bhou1mgole5kg" path="res://art/controller-mario-removebg-preview.png" id="8_4c57u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
 size = Vector3(60, 2, 60)
@@ -81,7 +85,7 @@ mesh = SubResource("CylinderMesh_ig7tw")
 curve = SubResource("Curve3D_0xm2m")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
-transform = Transform3D(-0.99989146, 0, 0.014597258, 0, 1, 0, -0.014597258, 0, -0.99989146, -12.837369, 0, -12.316885)
+transform = Transform3D(-0.99989134, 0, 0.014597256, 0, 1, 0, -0.014597256, 0, -0.99989134, -12.837369, 0, -12.316885)
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -103,6 +107,8 @@ offset_top = 34.0
 offset_right = 105.0
 offset_bottom = 57.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_272bh")
+theme_override_font_sizes/font_size = 28
 text = "Score: 0"
 script = ExtResource("5_7mycd")
 
@@ -114,25 +120,56 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="screen-controller" type="TextureRect" parent="UI_Manager/StartMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_right = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_kek77")
+
+[node name="controller-mario" type="TextureRect" parent="UI_Manager/StartMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -79.0
+offset_top = -239.0
+offset_right = 6.0
+offset_bottom = -241.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_4c57u")
+
 [node name="Label" type="Label" parent="UI_Manager/StartMenu"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -149.0
-offset_top = 76.0
-offset_right = 212.0
-offset_bottom = 162.0
+anchor_bottom = 0.5
+offset_left = -253.0
+offset_top = -152.0
+offset_right = 272.0
+offset_bottom = -66.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_272bh")
+theme_override_font_sizes/font_size = 78
 text = "Squash the Creeps"
 
 [node name="PlayButton" type="Button" parent="UI_Manager/StartMenu"]
 layout_mode = 0
-offset_left = 250.0
-offset_top = 178.0
-offset_right = 419.0
-offset_bottom = 234.0
+offset_left = 258.0
+offset_top = 250.0
+offset_right = 427.0
+offset_bottom = 306.0
+theme_override_fonts/font = ExtResource("6_272bh")
+theme_override_font_sizes/font_size = 28
 text = "Play"
 
 [node name="GameOverScreen" type="Control" parent="UI_Manager"]
@@ -143,14 +180,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="UI_Manager/GameOverScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.5
+offset_right = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_5vw27")
+
 [node name="Retry-text" type="ColorRect" parent="UI_Manager/GameOverScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = -1.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.38431373)
 
 [node name="Label" type="Label" parent="UI_Manager/GameOverScreen/Retry-text"]
 layout_mode = 1
@@ -159,13 +211,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -109.5
-offset_top = -14.0
-offset_right = 109.5
-offset_bottom = 14.0
+offset_left = -220.0
+offset_top = -115.0
+offset_right = 271.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Press Enter to retry."
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_272bh")
+theme_override_font_sizes/font_size = 130
+text = "game over"
 
 [node name="RetryButton" type="Button" parent="UI_Manager/GameOverScreen"]
 layout_mode = 0
@@ -173,6 +228,8 @@ offset_left = 265.0
 offset_top = 328.0
 offset_right = 480.0
 offset_bottom = 373.0
+theme_override_fonts/font = ExtResource("6_272bh")
+theme_override_font_sizes/font_size = 28
 text = "Retry"
 
 [node name="MainButton" type="Button" parent="UI_Manager/GameOverScreen"]
@@ -181,6 +238,8 @@ offset_left = 274.0
 offset_top = 377.0
 offset_right = 475.0
 offset_bottom = 418.0
+theme_override_fonts/font = ExtResource("6_272bh")
+theme_override_font_sizes/font_size = 28
 text = "Main"
 
 [node name="LivesLabel" type="Label" parent="UI_Manager"]
@@ -190,11 +249,13 @@ offset_top = 7.0
 offset_right = 138.0
 offset_bottom = 35.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_272bh")
+theme_override_font_sizes/font_size = 28
 text = "Lives"
 script = ExtResource("6_7mycd")
 
-[connection signal="timeout" from="MobTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="UI_Manager/StartMenu/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="UI_Manager/GameOverScreen/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="UI_Manager/GameOverScreen/MainButton" to="." method="_on_main_button_pressed"]

@@ -47,6 +47,8 @@ func end_game():
 	get_tree().call_group("mobs", "queue_free")
 	
 	start_menu.hide()
+	lives_label.hide()
+	score_label.hide()
 	game_over_screen.show()
 
 func spawn_player():
